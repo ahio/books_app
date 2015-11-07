@@ -6,13 +6,8 @@ import { loadedData } from './actions'
 var hello = React.createClass({
     componentDidMount() {
         $.get('/books.json', function(result) {
-            var lastGist = result[0];
             if (this.isMounted()) {
-                console.log(result);
-                //this.setState({
-                //    username: lastGist.owner.login,
-                //    lastGistUrl: lastGist.html_url
-                //});
+                this.props.loadedData(result);
             }
         }.bind(this));
     },
@@ -23,5 +18,12 @@ var hello = React.createClass({
     }
 });
 
-
-export default hello;
+function mapStateToProps(state) {
+    return {
+        books: state.data.books
+    }
+}
+export default connect(
+    mapStateToProps,
+    { loadedData }
+)(hello)
