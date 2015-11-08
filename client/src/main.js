@@ -17,7 +17,7 @@ var hello = React.createClass({
         <div className="books-list">
             <ol>
                 {this.props.books.map((element) => (
-                    <li key={element.title}><Link to={`/book/${element.title}`}><h3 className="book-title">{element.title}</h3></Link> - <Link to={`/book/${element.author}`}>{element.author}</Link></li>
+                    <li key={element.title}><Link to={`/book/${element.title}`}><h3 className="book-title">{element.title}</h3></Link> - <Link to={`/author/${element.author}`}>{element.author}</Link></li>
                 ))}
             </ol>
         </div>
