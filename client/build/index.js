@@ -69,11 +69,15 @@
 
 	var _reactRedux = __webpack_require__(209);
 
-	var _hello = __webpack_require__(227);
+	var _main = __webpack_require__(227);
 
-	var _hello2 = _interopRequireDefault(_hello);
+	var _main2 = _interopRequireDefault(_main);
 
-	var _configStore = __webpack_require__(229);
+	var _book = __webpack_require__(229);
+
+	var _book2 = _interopRequireDefault(_book);
+
+	var _configStore = __webpack_require__(230);
 
 	var _configStore2 = _interopRequireDefault(_configStore);
 
@@ -85,7 +89,8 @@
 	    _react2["default"].createElement(
 	        _reactRouter.Router,
 	        null,
-	        _react2["default"].createElement(_reactRouter.Route, { path: "/", component: _hello2["default"] })
+	        _react2["default"].createElement(_reactRouter.Route, { path: "/", component: _main2["default"] }),
+	        _react2["default"].createElement(_reactRouter.Route, { path: "/book/:bookTitle", component: _book2["default"] })
 	    )
 	), document.getElementById('container'));
 
@@ -25552,7 +25557,7 @@
 
 	var _actions = __webpack_require__(228);
 
-	console.log('loadedData => ', _actions.loadedData);
+	var _reactRouter = __webpack_require__(159);
 
 	var hello = _react2["default"].createClass({
 	    displayName: "hello",
@@ -25560,18 +25565,39 @@
 	    componentDidMount: function componentDidMount() {
 	        $.get('/books.json', (function (result) {
 	            if (this.isMounted()) {
-	                console.log(result);
-	                console.log(this.props);
 	                this.props.loadedData(result);
 	            }
 	        }).bind(this));
 	    },
 	    render: function render() {
-	        console.log('this.props => ', this.props);
 	        return _react2["default"].createElement(
 	            "div",
-	            null,
-	            "Hello"
+	            { className: "books-list" },
+	            _react2["default"].createElement(
+	                "ol",
+	                null,
+	                this.props.books.map(function (element) {
+	                    return _react2["default"].createElement(
+	                        "li",
+	                        { key: element.title },
+	                        _react2["default"].createElement(
+	                            _reactRouter.Link,
+	                            { to: "/book/" + element.title },
+	                            _react2["default"].createElement(
+	                                "h3",
+	                                { className: "book-title" },
+	                                element.title
+	                            )
+	                        ),
+	                        " - ",
+	                        _react2["default"].createElement(
+	                            _reactRouter.Link,
+	                            { to: "/author/" + element.author },
+	                            element.author
+	                        )
+	                    );
+	                })
+	            )
 	        );
 	    }
 	});
@@ -25584,7 +25610,7 @@
 	exports["default"] = (0, _reactRedux.connect)(mapStateToProps, { loadedData: _actions.loadedData })(hello);
 	module.exports = exports["default"];
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("E:\\books_app\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "hello.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("E:\\books_app\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "main.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 228 */
@@ -25617,6 +25643,83 @@
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("E:\\books_app\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("E:\\books_app\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(209);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _actions = __webpack_require__(228);
+
+	var _reactRouter = __webpack_require__(159);
+
+	var Book = _react2["default"].createClass({
+	    displayName: "Book",
+
+	    render: function render() {
+	        var _this = this;
+
+	        var data = {};
+	        this.props.books.forEach(function (element) {
+	            if (element.title === _this.props.params.bookTitle) {
+	                return data = {
+	                    title: element.title,
+	                    author: element.author,
+	                    description: element.description
+	                };
+	            }
+	        });
+	        console.log('data => ', data);
+	        return _react2["default"].createElement(
+	            "div",
+	            null,
+	            _react2["default"].createElement(
+	                "div",
+	                null,
+	                data.title
+	            ),
+	            _react2["default"].createElement(
+	                "div",
+	                null,
+	                data.author
+	            ),
+	            _react2["default"].createElement(
+	                "div",
+	                null,
+	                data.description
+	            )
+	        );
+	    }
+	});
+
+	function mapStateToProps(state) {
+	    return {
+	        books: state.data.books
+	    };
+	}
+	exports["default"] = (0, _reactRedux.connect)(mapStateToProps, { loadedData: _actions.loadedData })(Book);
+	module.exports = exports["default"];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("E:\\books_app\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "book.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("E:\\books_app\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("E:\\books_app\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -25628,7 +25731,7 @@
 
 	var _redux = __webpack_require__(216);
 
-	var _reducers = __webpack_require__(230);
+	var _reducers = __webpack_require__(231);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -25636,7 +25739,6 @@
 	    var store = (0, _redux.createStore)(_reducers2['default'], initialState);
 
 	    if (false) {
-	        // Enable Webpack hot module replacement for reducers
 	        module.hot.accept('./reducers', function () {
 	            var nextReducer = require('./reducers');
 	            store.replaceReducer(nextReducer);
@@ -25651,7 +25753,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("E:\\books_app\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "configStore.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("E:\\books_app\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("E:\\books_app\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -25676,8 +25778,6 @@
 	function data(state, action) {
 	    if (state === undefined) state = initialState;
 
-	    console.log('action => ', action.data);
-	    console.log('state => ', state);
 	    switch (action.type) {
 	        case _actions.LOADED_DATA:
 	            return _extends({}, state, action.data);
