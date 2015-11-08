@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from "react";
 import { connect } from 'react-redux'
 import ReactDOM from "react-dom";
@@ -6,22 +7,25 @@ import { Router, Route, Link } from 'react-router'
 
 let Book = React.createClass({
     render() {
-        let data = {};
-        this.props.books.forEach((element) => {
-            if(element.title === this.props.params.bookTitle) {
-                return data = {
-                    title: element.title,
-                    author: element.author,
-                    description: element.description
-                }
-            }
+        let books = this.props.books,
+            book,
+            author;
+
+        book = _.find(books, book => {
+            return book.title === this.props.params.bookTitle;
         });
-        console.log('data => ', data);
+        author = _.find(this.props.authors, author => {
+            return author._id === book.authorId;
+        });
+
         return(
             <div>
-                <div>{data.title}</div>
-                <div>{data.author}</div>
-                <div>{data.description}</div>
+                <div>{book.title}</div>
+                <div><Link to={`/author/${book.authorId}`}>{author.name}</Link></div>
+                <div>{_.map(book.genre, (genre) => (
+                    <li><Link to={`/genre/${genre}`}>{genre}</Link></li>
+                ))}</div>
+                <div>{book.description}</div>
             </div>
         )
     }
@@ -29,7 +33,8 @@ let Book = React.createClass({
 
 function mapStateToProps(state) {
     return {
-        books: state.data.books
+        books: state.data.books,
+        authors: state.data.authors
     }
 }
 export default connect(
