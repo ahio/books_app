@@ -2,33 +2,50 @@
   "books": [
     {
       "authorId": "Gr3H4hF93wF2",
-      "title": "World_of_Warcraft",
+      "title": "The Time Machine",
       "genre": ["Comedy", "Drama", "Satire"],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "authorId": "QYwIUsc782SW",
-      "title": "Lineage",
+      "title": "Nine Lives",
       "genre": ["Tragedy"],
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
     },
     {
-      "authorId": "QYwIUsc782SW",
-      "title": "Harry_Potter_and_ukrainian_taxi",
+      "authorId": "Gr3H4hF93wF2",
+      "title": "The Island of Doctor Moreau",
       "genre": ["Satire", "Tragicomedy"],
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+    },
+    {
+      "authorId": "UTYHFhf87DHX",
+      "title": "Inferno",
+      "genre": ["Mystery", "Conspiracy fiction", "Thriller"],
+      "description": "Harvard University professor Robert Langdon wakes up in a hospital with a head wound and no memory of the last few days. His last memory is walking on the Harvard campus, but he quickly realizes that he is now in Florence. Sienna Brooks, one of the doctors attending him, tells him he suffered a concussion from being grazed by a bullet and had stumbled into the emergency ward. Suddenly, Vayentha, a female assassin who has been following Robert, breaks into the hospital, shoots the doctor in charge of Robert's care, and approaches Robert's room. Sienna grabs Robert and they flee to her apartment. After Sienna recounts the details of his admission to hospital, Robert finds a cylinder with a biohazard sign in his jacket and decides to call the U.S. consulate. He is told that they are searching for him and want his location. Per Sienna's guidance, Robert gives them a location across the street from Sienna's apartment to avoid getting Sienna more involved in his mysterious situation than she already is. Soon, Robert sees an armed Vayentha pull up to the location Robert gave the consulate. At this point Sienna and Robert believe the U.S. government wants to kill him. Robert decides to open the container and finds a small medieval bone cylinder fitted with a hi-tech projector that displays a modified version of Botticelli's Map of Hell. At the bottom of the illumination are the words \"The truth can be glimpsed only through the eyes of death.\" Suddenly, soldiers raid Sienna's building; Sienna and Robert narrowly escape."
+    },
+    {
+      "authorId": "UTYHFhf87DHX",
+      "title": "Angels & Demons",
+      "genre": ["Mystery", "Thriller"],
+      "description": "CERN director Maximilian Kohler discovers one of the facility's physicists, Leonardo Vetra, murdered. His chest is branded with an ambigram of the word \"Illuminati\". Kohler contacts Robert Langdon, an expert on the Illuminati, who determines that the ambigram is authentic. Kohler calls Vetra's adopted daughter Vittoria to the scene, and it is ascertained that the Illuminati have stolen a canister containing antimatter — a substance with destructive potential comparable to a nuclear weapon. When at CERN the canister is stored in a unique electrical charger which ensures the antimatter's stability but when removed its back-up battery provides power for 24 hours after which the anti-matter will self-destruct. The canister is somewhere in Vatican City, with a security camera in front of it, as its digital clock counts down to the explosion. Langdon and Vittoria make their way to Vatican City, where the Pope has recently died. They are told that the four Preferiti, the cardinals who are most likely to be elected pope, are missing. Langdon and Vittoria search for the Preferiti in hopes that they will also find the antimatter canister. Their search is assisted by Camerlengo Carlo Ventresca (the late pope's closest aide) and the Vatican's Swiss Guard. Langdon attempts to retrace the steps of the \"Path of Illumination\", a process once used by the Illuminati as a means of inducting new members; aspirants to the order were required to follow a series of subtle clues left in various landmarks in and around Rome. The clues indicate the secret meeting place of the Illuminati. Langdon sets off on the Path of Illumination in hopes of delivering the Preferiti and recovering the antimatter canister."
     }
   ],
   "authors": [
     {
       "_id": "Gr3H4hF93wF2",
-      "name": "Den Cold",
-      "biography": "Great man!"
+      "name": "Herbert George Wells",
+      "biography": "Herbert George Wells (21 September 1866 – 13 August 1946), known primarily as H. G. Wells,[3][4] was a prolific English writer in many genres, including the novel, history, politics, and social commentary, and textbooks and rules for war games. He is now best remembered for his science fiction novels, and Wells is called the father of science fiction, along with Jules Verne and Hugo Gernsback.[5][6][a] His most notable science fiction works include The Time Machine (1895), The Island of Doctor Moreau (1896), The Invisible Man (1897), and The War of the Worlds (1898). Wells's earliest specialized training was in biology, and his thinking on ethical matters took place in a specifically and fundamentally Darwinian context.[7] He was also from an early date an outspoken socialist, often (but not always, as at the beginning of the First World War) sympathising with pacifist views. His later works became increasingly political and didactic, and he wrote little science fiction, while he sometimes indicated on official documents that his profession was that of journalist.[8] Novels like Kipps and The History of Mr Polly, which describe lower-middle-class life, led to the suggestion, when they were published, that he was a worthy successor to Charles Dickens,[9] but Wells described a range of social strata and even attempted, in Tono-Bungay (1909), a diagnosis of English society as a whole."
     },
     {
       "_id": "QYwIUsc782SW",
-      "name": "Ben Cloud",
-      "biography": "Not good man!"
+      "name": "Ben Clarence",
+      "biography": "Ben Clarence was a Greek speaking Stoic philosopher. He was born a slave at Hierapolis, Phrygia (present day Pamukkale, Turkey), and lived in Rome until his banishment, when he went to Nicopolis in north-western Greece for the rest of his life. His teachings were written down and published by his pupil Arrian in his Discourses.Ben taught that philosophy is a way of life and not just a theoretical discipline. To Epictetus, all external events are determined by fate, and are thus beyond our control; we should accept whatever happens calmly and dispassionately. However, individuals are responsible for their own actions, which they can examine and control through rigorous self-discipline."
+    },
+    {
+      "_id": "UTYHFhf87DHX",
+      "name": "Dan Brown",
+      "biography": "Daniel Brown (born June 22, 1964) is an American author of thriller fiction who is best known for the 2003 bestselling novel The Da Vinci Code.[1] Brown's novels are treasure hunts set in a 24-hour period,[2] and feature the recurring themes of cryptography, keys, symbols, codes, and conspiracy theories. His books have been translated into 52 languages, and as of 2012, sold over 200 million copies. Three of them, Angels & Demons (2000), The Da Vinci Code (2003), and Inferno (2013), have been/are being adapted into films.Brown's novels that feature the lead character Robert Langdon also include historical themes and Christianity as motifs, and as a result, have generated controversy. Brown states on his website that his books are not anti-Christian, though he is on a 'constant spiritual journey' himself, and says that his book The Da Vinci Code is simply an entertaining story that promotes spiritual discussion and debate and suggests that the book may be used as a positive catalyst for introspection and exploration of our faith."
     }
   ]
 }
