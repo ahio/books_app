@@ -3,11 +3,13 @@ import React from "react";
 import { connect } from 'react-redux'
 import { loadedData } from './actions'
 import { Link } from 'react-router'
+import NavigationBar from './nav-bar'
 
 let Genre = React.createClass({
     render() {
-        let books = this.props.books;
-        let booksGenre = [];
+        let books = this.props.books,
+            booksGenre = [];
+
         books.forEach( book => {
             let currentBook = book;
             book.genre.forEach( genre => {
@@ -16,12 +18,18 @@ let Genre = React.createClass({
                 }
             });
         });
+
         return (
-            <ol>
-                {booksGenre.map( book => (
-                    <li key={book.title}><Link to={`/book/${book.title}`}><h3 className="book-title">{book.title}</h3></Link> - <Link to={`/author/${book.authorId}`}>{book.authorName}</Link></li>
-                ))}
-            </ol>
+            <div>
+                <NavigationBar />
+                <div>
+                    <ol>
+                        {booksGenre.map( book => (
+                            <li key={book.title}><Link to={`/book/${book.title}`}><h3 className="book-title">{book.title}</h3></Link> - <Link to={`/author/${book.authorId}`}>{book.authorName}</Link></li>
+                        ))}
+                    </ol>
+                </div>
+            </div>
         )
     }
 });

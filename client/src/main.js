@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from 'react-redux'
 import { loadedData } from './actions'
 import { Link } from 'react-router'
+import NavigationBar from './nav-bar'
 
 var BooksList = React.createClass({
     componentDidMount() {
@@ -27,13 +28,19 @@ var BooksList = React.createClass({
         });
 
         return(
-        <div className="books-list">
-            <ol>
-                { booksData.map( book => (
-                    <li key={book.title}><Link to={`/book/${book.title}`}><h3 className="book-title">{book.title}</h3></Link> - <Link to={`/author/${book.authorId}`}>{book.authorName}</Link></li>
-                ))}
-            </ol>
-            <Link to={`/authors-list`}>Authors List</Link>
+        <div>
+            <NavigationBar />
+            <div className="books">
+                    { booksData.map( book => (
+                        <div key={book.title} className="book">
+                            <div className="book-content">
+                                <h3>
+                                <Link to={`/book/${book.title}`}>{book.title}</Link><span><Link to={`/author/${book.authorId}`}>{book.authorName}</Link></span>
+                                </h3>
+                            </div>
+                        </div>
+                    ))}
+            </div>
         </div>
         )
     }

@@ -1,3 +1,84 @@
+body {
+    background: #eee;
+    color: #666666;
+}
+
+#container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.navbar-right {
+    margin-right: 0;
+}
+
+.navbar .container {
+    width: auto;
+}
+
 li .book-title {
     display: inline;
+}
+
+.books {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.book {
+    background-color: #fff;
+    *zoom: 1;
+    position: relative;
+    opacity: 1;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.book:before, .book:after {
+    content: "";
+    display: table; }
+.book:after {
+    clear: both; }
+.book .book-content {
+    float: left; }
+.book .book-content h3 {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 18px; }
+.book .book-content h3 a {
+    display: inline-block;
+    margin-right: 5px; }
+.book .book-content h3 span {
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    color: #aaaaaa; }
+.book .book-content p {
+    margin: 0; }
+
+.book-container {
+    background-color: #F8F8F8;
+}
+
+.book-title {
+    padding: 10px;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.book-author {
+    font-size: 11pt;
+    padding-left: 10px;
+}
+
+.book-genre-container {
+    text-align: center;
+    margin-left: 10px;
+}
+
+.book-genre {
+    padding-right: 5px;
+}
+
+.book-description {
+    padding: 50px;
 }

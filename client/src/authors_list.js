@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { loadedData } from './actions'
 import { Link } from 'react-router'
 import { DropdownButton, MenuItem } from 'react-bootstrap';
+import NavigationBar from './nav-bar'
 
 let AuthorsList = React.createClass({
     render() {
-        let authors = this.props.authors;
-        let books = this.props.books;
-        let authorsOfBooks = [];
+        let authors = this.props.authors,
+            books = this.props.books,
+            authorsOfBooks = [];
 
         authors.forEach(author => {
             let currentAuthor = author;
@@ -22,24 +23,24 @@ let AuthorsList = React.createClass({
             authorsOfBooks.push(currentAuthor);
         });
 
-        console.log(authorsOfBooks);
-
-
         return(
             <div>
-                <ol>
-                {authorsOfBooks.map( author => (
-                    <li>
-                        <DropdownButton bsStyle='link' title="AuthorsName" id={author._id}>
-                            <MenuItem><Link to={`/author/${author._id}`}>{author.name}</Link></MenuItem>
-                            <MenuItem divider />
-                            {author.bookTitle.map( book => (
-                                <MenuItem><Link to={`/book/${book}`}>{book}</Link></MenuItem>
-                            ))}
-                        </DropdownButton>
-                    </li>
-                ))}
-                </ol>
+                <NavigationBar />
+                <div>
+                    <ol>
+                    {authorsOfBooks.map( author => (
+                        <li>
+                            <DropdownButton bsStyle='link' title="AuthorsName" id={author._id}>
+                                <MenuItem><Link to={`/author/${author._id}`}>{author.name}</Link></MenuItem>
+                                <MenuItem divider />
+                                {author.bookTitle.map( book => (
+                                    <MenuItem><Link to={`/book/${book}`}>{book}</Link></MenuItem>
+                                ))}
+                            </DropdownButton>
+                        </li>
+                    ))}
+                    </ol>
+                </div>
             </div>
         )
     }
