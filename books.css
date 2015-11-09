@@ -16,44 +16,45 @@ body {
     width: auto;
 }
 
-li .book-title {
-    display: inline;
-}
-
-.books {
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
 .book {
     background-color: #fff;
     *zoom: 1;
     position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
     opacity: 1;
     margin-bottom: 10px;
     padding: 10px;
 }
 .book:before, .book:after {
     content: "";
-    display: table; }
+    display: table;
+}
 .book:after {
-    clear: both; }
+    clear: both;
+}
 .book .book-content {
-    float: left; }
+    float: left;
+    padding-left: 30px;
+}
 .book .book-content h3 {
     margin: 0;
     line-height: 1.4;
-    font-size: 18px; }
+    font-size: 18px;
+}
 .book .book-content h3 a {
     display: inline-block;
-    margin-right: 5px; }
+    margin-right: 5px;
+    text-decoration: none;
+}
 .book .book-content h3 span {
     font-weight: normal;
     font-size: 14px;
     display: inline-block;
-    color: #aaaaaa; }
+    color: #aaaaaa;
+}
 .book .book-content p {
-    margin: 0; }
+    margin: 0;
+}
 
 .book-container {
     background-color: #F8F8F8;
@@ -81,4 +82,67 @@ li .book-title {
 
 .book-description {
     padding: 50px;
+}
+
+.author-name {
+    background-color: #fff;
+    padding: 10px 10px 10px 20px;
+    font-size: 14pt;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+}
+
+.author-books-list {
+    background-color: rgba(255, 255, 255, 0.79);
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+    padding: 10px 10px 10px 20px;
+}
+
+.author-book {
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+}
+
+.author-book a {
+    text-decoration: none;
+}
+
+.author-bio {
+    background-color: rgba(255, 255, 255, 0.83);
+    padding: 30px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+}
+
+.book-content span a {
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-block;
+    color: #aaa;
+}
+
+.book-content span a:hover {
+    color: #2F6FAD;
+    text-decoration: none;
+}
+
+.authors-list-item {
+    background-color: #fff;
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    opacity: 1;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    padding: 10px;
+}
+
+.authors-list-item:hover {
+    background-color: rgba(127, 127, 127, 0.39);
+}
+
+.authors-list-item button.dropdown-toggle:hover,
+.authors-list-item button.dropdown-toggle:active,
+.authors-list-item button.dropdown-toggle:focus {
+    text-decoration: none;
 }

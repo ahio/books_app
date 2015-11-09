@@ -22,12 +22,19 @@ let Genre = React.createClass({
         return (
             <div>
                 <NavigationBar />
-                <div>
-                    <ol>
-                        {booksGenre.map( book => (
-                            <li key={book.title}><Link to={`/book/${book.title}`}><h3 className="book-title">{book.title}</h3></Link> - <Link to={`/author/${book.authorId}`}>{book.authorName}</Link></li>
-                        ))}
-                    </ol>
+                <div className="books">
+                    {booksGenre.map( book => (
+                        <div key={book.title} className="book">
+                            <div className="book-content">
+                                <h3>
+                                    <Link to={`/book/${book.title}`}>{book.title}</Link>
+                                    <span>
+                                        <Link to={`/author/${book.authorId}`}>{book.authorName}</Link>
+                                    </span>
+                                </h3>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         )

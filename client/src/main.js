@@ -30,16 +30,19 @@ var BooksList = React.createClass({
         return(
         <div>
             <NavigationBar />
-            <div className="books">
-                    { booksData.map( book => (
-                        <div key={book.title} className="book">
-                            <div className="book-content">
-                                <h3>
-                                <Link to={`/book/${book.title}`}>{book.title}</Link><span><Link to={`/author/${book.authorId}`}>{book.authorName}</Link></span>
-                                </h3>
-                            </div>
+            <div className="books-list">
+                { booksData.map( book => (
+                    <div key={book.title} className="book">
+                        <div className="book-content">
+                            <h3>
+                            <Link to={`/book/${book.title}`}>{book.title}</Link>
+                                <span>
+                                    <Link to={`/author/${book.authorId}`}>{book.authorName}</Link>
+                                </span>
+                            </h3>
                         </div>
-                    ))}
+                    </div>
+                ))}
             </div>
         </div>
         )

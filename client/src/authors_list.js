@@ -26,10 +26,9 @@ let AuthorsList = React.createClass({
         return(
             <div>
                 <NavigationBar />
-                <div>
-                    <ol>
+                <div className="authors-list">
                     {authorsOfBooks.map( author => (
-                        <li>
+                        <div className="authors-list-item">
                             <DropdownButton bsStyle='link' title="AuthorsName" id={author._id}>
                                 <MenuItem><Link to={`/author/${author._id}`}>{author.name}</Link></MenuItem>
                                 <MenuItem divider />
@@ -37,9 +36,8 @@ let AuthorsList = React.createClass({
                                     <MenuItem><Link to={`/book/${book}`}>{book}</Link></MenuItem>
                                 ))}
                             </DropdownButton>
-                        </li>
+                        </div>
                     ))}
-                    </ol>
                 </div>
             </div>
         )

@@ -24,15 +24,14 @@ let Author = React.createClass({
             <div>
                 <NavigationBar />
                 <div>
-                    <div>{author.name}</div>
-                    <div>{author.biography}</div>
-                    <div>
-                        <ul>
-                            {authorBooks.map( book => (
-                                <li><Link to={`/book/${book.title}`}>{book.title}</Link></li>
-                            ))}
-                        </ul>
+                    <div className="author-name">Author: {author.name}</div>
+                    <div className="author-books-list">
+                        Books list:
+                        {authorBooks.map( book => (
+                            <div key={book.title} className="author-book"><Link to={`/book/${book.title}`}>{book.title}</Link></div>
+                        ))}
                     </div>
+                    <div className="author-bio">{author.biography}</div>
                 </div>
             </div>
         )
