@@ -5,7 +5,7 @@ import { loadedData } from './actions'
 import { Link } from 'react-router'
 import NavigationBar from './nav-bar'
 
-var BooksList = React.createClass({
+let BooksList = React.createClass({
     componentDidMount() {
         $.get('/books.json', function(result) {
             if (this.isMounted()) {

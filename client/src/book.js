@@ -22,10 +22,14 @@ let Book = React.createClass({
             <div>
                 <NavigationBar />
                 <div className="book-container">
-                    <div className="book-title">{book.title} <span className="book-author"><Link to={`/author/${book.authorId}`}>{author.name}</Link></span></div>
-                    <div className="book-genre-container">{_.map(book.genre, (genre) => (
-                        <span className="book-genre"><Link to={`/genre/${genre}`}>{genre}</Link></span>
-                    ))}</div>
+                    <div className="book-title">{book.title}</div>
+                    <div className="book-author">By <Link to={`/author/${book.authorId}`}>{author.name}</Link></div>
+                    <div className="book-genre-container">
+                        <span className="text">Genre:</span>
+                        {_.map(book.genre, (genre) => (
+                            <span className="book-genre"><Link to={`/genre/${genre}`}>{genre}</Link></span>
+                        ))}
+                    </div>
                     <div className="book-description">{book.description}</div>
                 </div>
             </div>

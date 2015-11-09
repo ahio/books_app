@@ -7,8 +7,8 @@ let NavigationBar = React.createClass({
         return(
             <div>
                 <Navbar>
-                    <NavBrand><a>Books Library</a></NavBrand>
-                    <Nav right>
+                    <NavBrand><Link to={`/`}>Books Library</Link></NavBrand>
+                    <Nav left>
                         <ul className="nav navbar-nav navbar-right">
                             <li role="presentation">
                                 <Link to={`/authors-list`}>Authors List</Link>
