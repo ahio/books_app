@@ -30,11 +30,13 @@ let AuthorsList = React.createClass({
                     {authorsOfBooks.map( author => (
                         <div className="authors-list-item">
                             <DropdownButton bsStyle='link' title={author.name} id={author._id}>
-                                <MenuItem><Link className="author-profile-link" to={`/author/${author._id}`}>Profile Page</Link></MenuItem>
+                                <li role="presentation"><Link className="author-profile-link" to={`/author/${author._id}`}>Profile Page</Link></li>
                                 <MenuItem divider />
                                 <div className="text">Books</div>
                                 {author.bookTitle.map( book => (
-                                    <MenuItem><Link className="book-item" to={`/book/${book}`}>{book}</Link></MenuItem>
+                                    <li role="presentation">
+                                        <Link className="book-item" to={`/book/${book}`}>{book}</Link>
+                                    </li>
                                 ))}
                             </DropdownButton>
                         </div>

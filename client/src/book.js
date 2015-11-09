@@ -27,7 +27,7 @@ let Book = React.createClass({
                     <div className="book-genre-container">
                         <span className="text">Genre:</span>
                         {_.map(book.genre, (genre) => (
-                            <span className="book-genre"><Link to={`/genre/${genre}`}>{genre}</Link></span>
+                            <span key={genre} className="book-genre"><Link to={`/genre/${genre}`}>{genre}</Link></span>
                         ))}
                     </div>
                     <div className="book-description">{book.description}</div>
