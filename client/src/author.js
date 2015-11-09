@@ -1,33 +1,31 @@
 import _ from 'lodash';
 import React from "react";
 import { connect } from 'react-redux'
-import ReactDOM from "react-dom";
 import { loadedData } from './actions'
-import { Router, Route, Link } from 'react-router'
+import { Link } from 'react-router'
 
 
 let Author = React.createClass({
     render() {
         let books = this.props.books,
             authors = this.props.authors,
-            authorBooks = [];
+            authorBooks;
         let author = _.find(authors, author => {
             return author._id === this.props.params.authorId;
         });
-        _.forEach(books, (book) => {
-            if (book.authorId === this.props.params.authorId) {
-                authorBooks.push(book.title);
-            }
+        authorBooks = _.filter(books, book => {
+            return book.authorId === this.props.params.authorId
         });
 
+        console.log(authorBooks);
         return(
             <div>
                 <div>{author.name}</div>
                 <div>{author.biography}</div>
                 <div>
                     <ul>
-                        {_.map(authorBooks, book => (
-                            <li><Link to={`/book/${book}`}>{book}</Link></li>
+                        {authorBooks.map( book => (
+                            <li><Link to={`/book/${book.title}`}>{book.title}</Link></li>
                         ))}
                     </ul>
                 </div>

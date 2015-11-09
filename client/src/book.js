@@ -1,9 +1,8 @@
 import _ from 'lodash';
 import React from "react";
 import { connect } from 'react-redux'
-import ReactDOM from "react-dom";
 import { loadedData } from './actions'
-import { Router, Route, Link } from 'react-router'
+import { Link } from 'react-router'
 
 let Book = React.createClass({
     render() {

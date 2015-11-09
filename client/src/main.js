@@ -1,9 +1,8 @@
 import _ from 'lodash';
 import React from "react";
 import { connect } from 'react-redux'
-import ReactDOM from "react-dom";
 import { loadedData } from './actions'
-import { Router, Route, Link } from 'react-router'
+import { Link } from 'react-router'
 
 var BooksList = React.createClass({
     componentDidMount() {
@@ -17,23 +16,24 @@ var BooksList = React.createClass({
         let authors = this.props.authors,
             books = this.props.books,
             booksData = [],
-            authorName;
+            author;
 
         books.forEach( book => {
-            authorName = _.find(authors, author => {
+            author = _.find(authors, author => {
                 return author._id === book.authorId
             });
-            book.authorName = authorName.name;
+            book.authorName = author.name;
             booksData.push(book);
         });
 
         return(
         <div className="books-list">
             <ol>
-                { _.map(booksData, (book) => (
+                { booksData.map( book => (
                     <li key={book.title}><Link to={`/book/${book.title}`}><h3 className="book-title">{book.title}</h3></Link> - <Link to={`/author/${book.authorId}`}>{book.authorName}</Link></li>
                 ))}
             </ol>
+            <Link to={`/authors-list`}>Authors List</Link>
         </div>
         )
     }
