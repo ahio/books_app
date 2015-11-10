@@ -1,4 +1,4 @@
-# books_app
+# books_app [![Build Status](https://travis-ci.org/ahio/books_app.svg)](https://travis-ci.org/ahio/books_app)
 Books application built with React
 
 
